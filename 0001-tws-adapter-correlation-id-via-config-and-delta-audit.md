@@ -94,7 +94,4 @@ Query the TWS database or plan to find which job instance was triggered by which
 
 ## References
 
-- *Hybrid Workflow Orchestration – Task Updates – 09Oct2026* (deck), slides 3–4: correlation ID purpose, challenges, and correlation strategy.
-- Meeting recording / transcript, 2026-10-09 — Doug Heitkamp asked for this design to be captured as an ADR.
-- Backlog #16 — Define standard data-availability event schema (Avro), including `event_id` and `correlation_id`.
 - [ADR 0002](0002-reject-tws-azure-service-bus-job-plugin-for-event-intake.md) — keeps the Python listener that this ADR depends on.
