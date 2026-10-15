@@ -4,7 +4,7 @@
 
 **Date**: 2026-10-13
 
-**Authors**: Chandra Buchha — Kroger Hybrid Workflow Orchestration Squad
+**Authors**: Amit Thorat,Chandra Buchha — Kroger Hybrid Workflow Orchestration Squad
 
 **Reviewers**: Doug Heitkamp
 
