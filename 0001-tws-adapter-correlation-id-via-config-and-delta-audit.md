@@ -34,6 +34,15 @@ The question is **how to re-establish the link between an inbound event and the 
 
 ## Decision
 
+<img width="693" height="344" alt="image" src="https://github.com/user-attachments/assets/554a5cbc-6b6e-4382-ba70-dc96df073d89" />
+
+
+
+
+
+
+
+
 **Establish correlation outside TWS, using a per-workflow event config file and Delta audit tables written by the listener and publisher. Do not read TWS system tables.**
 
 Components:
