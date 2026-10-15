@@ -34,7 +34,8 @@ The question is **how to re-establish the link between an inbound event and the 
 
 ## Decision
 
-<img width="693" height="344" alt="image" src="https://github.com/user-attachments/assets/554a5cbc-6b6e-4382-ba70-dc96df073d89" />
+<img width="827" height="413" alt="image" src="https://github.com/user-attachments/assets/7493e634-f682-4174-831e-755a3a33cd22" />
+
 
 
 
