@@ -28,6 +28,7 @@ What the plugin is, per HCL documentation:
 ## Decision
 
 **Do not adopt the TWS Azure Service Bus job plugin for event intake. Keep the custom Python TWS Event Listener as designed.**
+<img width="692" height="356" alt="image" src="https://github.com/user-attachments/assets/8713551f-147b-4871-baca-a81dea2e4b1e" />
 
 Mapping the plugin onto the adapter flow shows it would only replace the "receive" step:
 
