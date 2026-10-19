@@ -63,7 +63,7 @@ Processes on AIX:
 | **Run resolver** | To decide: service, loop, or TWS job (Tanmay, query 1) | Claim runs, track them to a final state |
 | **Publisher** | Same host and pattern as the resolver | Step 7 |
 
-### Sequence
+---### Sequence
 
 ```mermaid
 sequenceDiagram
@@ -95,7 +95,7 @@ sequenceDiagram
     P->>EH: publish new event (new event_id, same correlation_id)
     P->>PA: insert PUBLISHED; mark job audit row published
 ```
-
+----
 ### Event state model
 
 Each inbound event moves through one state in `TWS_EVENT_LISTENER_AUDIT.PROCESSING_STATE`:
