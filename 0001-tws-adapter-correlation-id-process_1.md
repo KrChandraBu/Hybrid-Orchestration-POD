@@ -65,36 +65,7 @@ Processes on AIX:
 
 ---### Sequence
 
-```mermaid
-sequenceDiagram
-    autonumber
-    participant EH as DESP / Event Hub
-    participant L as Listener (Python)
-    participant LA as TWS_EVENT_LISTENER_AUDIT
-    participant TWS as TWS Event Processing
-    participant R as Run resolver
-    participant JA as TWS_JOB_AUDIT
-    participant INF as Informatica
-    participant P as Publisher
-    participant PA as TWS_EVENT_PUBLISHER_AUDIT
-
-    EH->>L: data-available event (event_id, correlation_id)
-    L->>LA: dedupe on event_id; insert RECEIVED
-    L->>L: validate schema, route via TWS_EVENT_CONFIG
-    L->>TWS: sendevent (custom event)
-    L->>LA: update SUBMITTED (or SUBMIT_FAILED)
-    L->>EH: checkpoint (only after the audit row is committed)
-    TWS->>INF: rule action → submit job stream / reply to prompt → workflow runs
-    R->>LA: read SUBMITTED, unclaimed events
-    R->>TWS: DISC API: runs of the configured job / job stream
-    R->>JA: claim one run (event_id, correlation_id, instance id)
-    R->>TWS: poll until SUCC / ABEND
-    R->>JA: update status, start / end
-    P->>JA: read runs in publish_on_status, not yet published
-    P->>INF: read session log (via config mapping)
-    P->>EH: publish new event (new event_id, same correlation_id)
-    P->>PA: insert PUBLISHED; mark job audit row published
-```
+TBD 
 ----
 ### Event state model
 
