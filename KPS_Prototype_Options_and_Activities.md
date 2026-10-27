@@ -37,36 +37,36 @@ If Podman or Docker isn't allowed on the laptops, the local container option dro
 
 Goal: prove the application works as containers under KPS-style rules, so the images are ready when the namespace is.
 
-| Owner | Activity | What we're trying to do |
-|---|---|---|
-| Both | Confirm Podman or Docker is allowed on their laptops | Everything container-based depends on it |
-| Both | Check which systems their machines can reach (TWS-TEST, Oracle repository, Event Hub, Databricks) | Know which tests can run locally and which must wait for the namespace |
-| Both | Get Artifactory access for the approved Python base image | Needed to build KPS-compliant images |
-| Tanmay | Containerize the listener: non-root, read-only filesystem, /tmp only, JSON logs on stdout | Meet KPS rules so the pod deploys cleanly the first time |
-| Tanmay | Add the duplicate check before `sendevent` or `run-now`, and test kill-and-replay | A replayed event must never submit the same TWS job twice |
-| Tanmay | Time Delta audit writes from a container through the SQL warehouse | Know the latency and cost of writing an audit row per event |
-| Akshata | Map every session-log field to a PowerCenter repository column or IDMC API field | Replace reading /gpfs, which pods can't reach |
-| Akshata | Move TWS_EVENT_CONFIG to a ConfigMap with schema validation | Config changes go through a controlled release |
-| Akshata | Package the shared library for both images; update DEART-58071 | Both services run identical, tested code with proper credentials |
+| Activity | What we're trying to do |
+|---|---|
+| Confirm Podman or Docker is allowed on their laptops | Everything container-based depends on it |
+| Check which systems their machines can reach (TWS-TEST, Oracle repository, Event Hub, Databricks) | Know which tests can run locally and which must wait for the namespace |
+| Get Artifactory access for the approved Python base image | Needed to build KPS-compliant images |
+| Containerize the listener: non-root, read-only filesystem, /tmp only, JSON logs on stdout | Meet KPS rules so the pod deploys cleanly the first time |
+| Add the duplicate check before `sendevent` or `run-now`, and test kill-and-replay | A replayed event must never submit the same TWS job twice |
+| Time Delta audit writes from a container through the SQL warehouse | Know the latency and cost of writing an audit row per event |
+| Map every session-log field to a PowerCenter repository column or IDMC API field | Replace reading /gpfs, which pods can't reach |
+| Move TWS_EVENT_CONFIG to a ConfigMap with schema validation | Config changes go through a controlled release |
+| Package the shared library for both images; update DEART-58071 | Both services run identical, tested code with proper credentials |
 
 ### Path B: KPS platform readiness (Chandrakant, Sravanthi, Chandra)
 
 Goal: get the namespace, network, access and TWS hand-off ready, so the images have somewhere to run and something to talk to.
 
-| Owner | Activity | What we're trying to do |
-|---|---|---|
-| Chandrakant | Book KPS office hours (Tue or Fri, 2–3 pm ET) and get a named KPS SRE contact | A direct line to the team that sets our cluster, quota and timeline |
-| Chandrakant | Request the dev namespace; track ServiceNow, Artifactory, GitHub team, BIA rating and SPM | KPS won't onboard us until these are in place |
-| Chandrakant | Ask KPS SRE: cluster and quota, egress range, Akeyless or Key Vault, workload identity, lead time | Answers that shape the security design and the timeline |
-| Chandrakant | Get non-prod PowerCenter repository access (host, port, service name, read-only account) | The publisher's replacement source for run stats |
-| Chandrakant | Raise the NetSec request for on-prem access from the KPS egress range | Confirm pods can reach the TWS event server and the Oracle repository |
-| Chandrakant | Add Tanmay, Akshata and Chandra to the Rancher Developer AD group | Access ready by the time the namespace is |
-| Sravanthi | Test `sendevent` from a non-agent Linux container; check for a TWS REST API | Prove the listener can trigger TWS from a pod |
-| Sravanthi | Find out what the TWS Kubernetes plug-in needs to reach our cluster | An alternative where TWS starts our pod instead |
-| Sravanthi | Prove event-rule variables carry the job name and job stream; get the TWS-side POC scheduled | End-to-end correlation without changing Informatica jobs |
-| Chandra | Update Jira to the KPS direction (DEART-58661, DEART-58015, DEART-58560, EDSP-6377; hold DEART-57854) | Tickets reflect the new direction |
-| Chandra | Draft the network flow matrix and the KPS resource requirement doc | Inputs for NetSec, KPS and Governance |
-| Chandra | Decide the three design hinges as findings come in: TWS hand-off, run-stats source, audit write path | A stable design to build against |
+| Activity | What we're trying to do |
+|---|---|
+| Book KPS office hours (Tue or Fri, 2–3 pm ET) and get a named KPS SRE contact | A direct line to the team that sets our cluster, quota and timeline |
+| Request the dev namespace; track ServiceNow, Artifactory, GitHub team, BIA rating and SPM | KPS won't onboard us until these are in place |
+| Ask KPS SRE: cluster and quota, egress range, Akeyless or Key Vault, workload identity, lead time | Answers that shape the security design and the timeline |
+| Get non-prod PowerCenter repository access (host, port, service name, read-only account) | The publisher's replacement source for run stats |
+| Raise the NetSec request for on-prem access from the KPS egress range | Confirm pods can reach the TWS event server and the Oracle repository |
+| Add Tanmay, Akshata and Chandra to the Rancher Developer AD group | Access ready by the time the namespace is |
+| Test `sendevent` from a non-agent Linux container; check for a TWS REST API | Prove the listener can trigger TWS from a pod |
+| Find out what the TWS Kubernetes plug-in needs to reach our cluster | An alternative where TWS starts our pod instead |
+| Prove event-rule variables carry the job name and job stream; get the TWS-side POC scheduled | End-to-end correlation without changing Informatica jobs |
+| Update Jira to the KPS direction (DEART-58661, DEART-58015, DEART-58560, EDSP-6377; hold DEART-57854) | Tickets reflect the new direction |
+| Draft the network flow matrix and the KPS resource requirement doc | Inputs for NetSec, KPS and Governance |
+| Decide the three design hinges as findings come in: TWS hand-off, run-stats source, audit write path | A stable design to build against |
 
 ### Where the paths meet
 
