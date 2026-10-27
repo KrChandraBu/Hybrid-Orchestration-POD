@@ -6,7 +6,7 @@ APM0008112 · Hybrid Orchestration · 26 Oct 2026
 
 1. **Direction.** Kubernetes (KPS) is the only hosting path. The application architecture stays the same: a Python listener and a Python publisher, TWS_EVENT_CONFIG, Delta audit tables and Event Hub. Only the hosting and a few integration points change.
 2. **Where we prototype.** There are three places we can run the listener and publisher. We use all three in sequence, overlapping, so nothing waits on approvals.
-3. **How we split the work.** Path A builds the prototype on local machines (Tanmay, Akshata). Path B gets KPS, TWS and the network ready (Chandrakant, Sravanthi, Chandra). The two meet when the dev KPS namespace is ready.
+3. **How we split the work.** Path A builds the prototype on local machines (Tanmay, Akshata). Path B gets KPS, TWS and the network ready (Chandra, Chandrakant & Sravanthi, ). The two meet when the dev KPS namespace is ready.
 4. **What we need from this call.** Agreement on the split, confirmation that Podman or Docker is allowed on the offshore laptops, and a go-ahead to request the dev namespace and book KPS office hours this week.
 
 ## The three options
