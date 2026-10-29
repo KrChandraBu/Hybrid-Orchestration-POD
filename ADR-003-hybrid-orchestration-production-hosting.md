@@ -138,4 +138,4 @@ DESP ──► Databricks listener ──REST──► TWS generic job ──sen
 - Go-live depends on KPS onboarding, network approvals and the 10 Nov governance outcome.
 - The team builds Helm, Harness and Kyverno skills and supports the KPS workloads.
 - The TWS plugin option is closed. The core logic stays hosting-independent.
-- Non-prod uses only non-prod data sources, and the 8 Jan 2027 date is checked against the year-end freeze.
+- Non-prod uses only non-prod data sources.
