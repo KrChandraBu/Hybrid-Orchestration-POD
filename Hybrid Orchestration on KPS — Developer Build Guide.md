@@ -21,6 +21,7 @@ This guide is what Tanmay and Akshatha build from, and what Amit reviews. It cov
 - **Reconciler owner:** not assigned yet. Suggest Tanmay, since it shares the TWS client with the Listener.
 
 ## 2. Architecture overview
+<img width="3162" height="2018" alt="Hybrid_Orchestration_E2E_Flow1-Detailed — flow, suggestions, open questions drawio" src="https://github.com/user-attachments/assets/c32bee3f-a298-418e-8ec5-8a32e5509cca" />
 
 One Data Available event in, one TWS job stream run, one Data Available event out, all tied together by one `correlation_id`. All three workloads run in namespace `hybrid-orch-<env>` on KPS and only call **out**; TWS never calls into KPS.
 
