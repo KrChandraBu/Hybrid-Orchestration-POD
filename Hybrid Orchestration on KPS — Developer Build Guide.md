@@ -10,7 +10,7 @@ This guide is what Tanmay and Akshatha build from, and what Amit reviews. It cov
 | --- | --- |
 | Tanmay | Builds the **Listener** (section 4) and the shared `common` package |
 | Akshatha | Builds the **Publisher** (section 6), publish rules and attribute mapping with data owners |
-| Amit | Validates the correlation ID logic and table design; comments using the checklist in section 12 |
+| Amit | Architecture owner ; Validates the correlation ID logic and table design; comments using the checklist in section 12 |
 | Chandra | Architecture owner; answers design questions and closes open items |
 
 - **Settled:** items in sections 2–8 unless marked *proposed*.
