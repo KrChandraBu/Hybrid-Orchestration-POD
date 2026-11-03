@@ -1,6 +1,6 @@
 # Hybrid Orchestration on KPS — Developer Build Guide
 
-Nov 2, 2026 · @Chandra Buchha
+
 
 ## 1. Purpose and how to use this guide
 
@@ -59,7 +59,7 @@ One `correlation_id` (UUID v4) per delivery cycle. It is set once by the Listene
 
 **Collision check:** two IDs can share the same 8-character `corr_short`. Always confirm the full `CORR_ID` before linking; if TWS can't return the variable, treat two alias matches as `AMBIGUOUS`.
 
-## 4. Listener build spec (Tanmay)
+## 4. Listener build spec 
 
 The Listener decides whether an event should start a TWS job and, if so, starts it **exactly once** with the correlation ID attached. It writes state **before** it calls TWS and checkpoints the Event Hub offset **last**.
 
@@ -154,7 +154,7 @@ def reconcile_cycle(store, tws, now):
 
 The 15-minute window and 30-minute timeout are starting values; tune them with Sravanthi from real submit delays.
 
-## 6. Publisher build spec (Akshatha)
+## 6. Publisher build spec 
 
 The Publisher publishes **only** after the `publish_on` job is confirmed `SUCC` and the publish rules pass, and it publishes each delivery **once**. It never publishes on a `sendevent` ACK.
 
