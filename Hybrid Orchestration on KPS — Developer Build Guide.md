@@ -662,15 +662,4 @@ Please comment directly on the section, and tick each item once you're satisfied
 
 - [ ] Anything in sections 4–7 that could lose an event or publish twice
 
-## 13. References
 
-- [Hybrid Orchestration on KPS — Correlation ID Strategy: End-to-End Guide](https://kroger.atlassian.net/wiki/spaces/CoP/pages/1967918314)
-- [Hybrid Orchestration — Production Options (KPS & TWS Plugin)](https://kroger.atlassian.net/wiki/spaces/CoP/pages/1964769393)
-- [Hybrid Orchestration — KPS Resource Requirement (draft)](https://kroger.atlassian.net/wiki/spaces/DCI/pages/1969946681)
-- [TWS API Integration Analysis for DISC (DEART-54610)](https://kroger.atlassian.net/wiki/spaces/ADT/pages/1496056501)
-- [DISC AI Enablement — Authentication Design](https://kroger.atlassian.net/wiki/spaces/ETL/pages/1910178068)
-- [Hybrid Orchestration — Issue Tracker & Status](https://kroger.atlassian.net/wiki/spaces/ETL/pages/1795850988)
-- ADR-003: Production hosting — KPS (accepted 29 Oct 2026, decided by Doug)
-- Diagram: `Hybrid_Orchestration_E2E_Flow.drawio` (detailed and happy-path pages)
-- KPS call questions: `Hybrid_Orchestration_KPS_Call_Questions.docx`
-- Jira: DEART-57854, DEART-58239, DEART-57838, DEART-57584 · APM0008112 · KTDPE-5305
